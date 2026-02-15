@@ -7,8 +7,8 @@ exports.handler = async function(event, context) {
     };
   }
 
-  const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
-  const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
+  const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN_SPROUT;
+  const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID_SPROUT;
   const AIRTABLE_PRODUCTS_TABLE = process.env.AIRTABLE_PRODUCTS_TABLE || 'Products';
 
   try {
