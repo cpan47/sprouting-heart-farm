@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Sprouting Heart Farm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .info { color: #007bff; }
+        button {
+            background: #2d5016;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #4a7c2b;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Sprouting Heart Farm - System Test</h1>
+    
+    <div class="test-card">
+        <h2>Quick Tests</h2>
+        <p>Click the buttons below to verify the website is working correctly:</p>
+        
+        <button onclick="testProducts()">1. Test Products Load</button>
+        <button onclick="testCart()">2. Test Cart Functions</button>
+        <button onclick="testAirtable()">3. Test Airtable Config</button>
+        <button onclick="window.open('index.html', '_blank')">4. Open Website</button>
+        
+        <div id="results"></div>
+    </div>
+    
+    <div class="test-card">
+        <h2>Checklist</h2>
+        <ul>
+            <li>✅ HTML file complete with script tag</li>
+            <li>✅ CSS file includes all styles</li>
+            <li>✅ JavaScript includes products array</li>
+            <li>✅ Airtable integration code ready</li>
+            <li>⚠️ Airtable credentials need to be configured</li>
+        </ul>
+    </div>
+    
+    <div class="test-card">
+        <h2>Next Steps</h2>
+        <ol>
+            <li>Click "Open Website" button above to see the site</li>
+            <li>If vegetables don't appear, check browser console (F12 → Console)</li>
+            <li>Follow AIRTABLE_SETUP.md to enable order management</li>
+            <li>Deploy to Netlify when ready</li>
+        </ol>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function testProducts() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<h3>Product Test Results:</h3>';
+            
+            if (typeof products === 'undefined') {
+                results.innerHTML += '<p class="error">❌ Products array not found. Script.js not loaded.</p>';
+                return;
+            }
+            
+            results.innerHTML += `<p class="success">✅ Products array found with ${products.length} vegetables</p>`;
+            
+            products.forEach((p, i) => {
+                results.innerHTML += `<p class="info">${i+1}. ${p.emoji} ${p.name} - $${p.price.toFixed(2)}/${p.unit}</p>`;
+            });
+        }
+        
+        function testCart() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<h3>Cart Test Results:</h3>';
+            
+            if (typeof cart === 'undefined') {
+                results.innerHTML += '<p class="error">❌ Cart not initialized</p>';
+                return;
+            }
+            
+            results.innerHTML += '<p class="success">✅ Cart system initialized</p>';
+            results.innerHTML += `<p class="info">Current cart items: ${cart.length}</p>`;
+            
+            // Try to add item to cart
+            try {
+                const testProduct = products[0];
+                addToCart(testProduct.id);
+                results.innerHTML += `<p class="success">✅ Successfully added ${testProduct.name} to cart</p>`;
+                results.innerHTML += `<p class="info">Cart now has ${cart.length} items</p>`;
+            } catch (e) {
+                results.innerHTML += `<p class="error">❌ Error adding to cart: ${e.message}</p>`;
+            }
+        }
+        
+        function testAirtable() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<h3>Airtable Configuration:</h3>';
+            
+            if (typeof AIRTABLE_TOKEN === 'undefined') {
+                results.innerHTML += '<p class="error">❌ Airtable variables not found</p>';
+                return;
+            }
+            
+            if (AIRTABLE_TOKEN === 'YOUR_TOKEN_HERE') {
+                results.innerHTML += '<p class="error">⚠️ Airtable token not configured yet</p>';
+                results.innerHTML += '<p class="info">Follow AIRTABLE_SETUP.md to get your token</p>';
+            } else {
+                results.innerHTML += '<p class="success">✅ Airtable token is set</p>';
+            }
+            
+            if (AIRTABLE_BASE_ID === 'YOUR_BASE_ID_HERE') {
+                results.innerHTML += '<p class="error">⚠️ Airtable base ID not configured yet</p>';
+            } else {
+                results.innerHTML += '<p class="success">✅ Airtable base ID is set</p>';
+            }
+            
+            results.innerHTML += '<p class="info">Table name: ' + AIRTABLE_TABLE_NAME + '</p>';
+        }
+    </script>
+</body>
+</html>

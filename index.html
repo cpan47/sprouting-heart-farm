@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprouting Heart Farm | No-Till Organic Vegetables - Brunswick, NY</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Sprouting Heart Farm</div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#vegetables" class="nav-link">Shop</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="cart-btn" id="cartBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 2L7.17 4H3v2h18V4h-4.17L15 2H9zm-4 6v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8H5z"/>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Growing With</span>
+                    <span class="title-line">Nature</span>
+                </h1>
+                <p class="hero-subtitle">A fifth generation family farm in Brunswick, NY, practicing no-till organic methods and growing fresh vegetables year-round for our community</p>
+                <div class="hero-buttons">
+                    <a href="#vegetables" class="btn btn-primary">Pre-Order Now</a>
+                    <a href="#about" class="btn btn-secondary">Our Story</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">🥬</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="image-placeholder">🌱</div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">Five Generations of Farming, Growing into the Future</h2>
+                    <p class="about-text">Sprouting Heart Farm is operated by Julia Sovey and Anthony Grab on Anthony's fifth generation family farm in Brunswick, NY. We're passionate about growing nutrient-dense vegetables using sustainable, no-till organic methods.</p>
+                    <p class="about-text">Using high tunnels and season extension techniques, we grow a wide variety of fresh vegetables year-round. Every crop is grown with integrated pest management, crop rotation, cover crops, and only organic materials—for the health of our community, the environment, and ourselves.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">5th</div>
+                            <div class="stat-label">Generation Farm</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">No-Till</div>
+                            <div class="stat-label">Organic Methods</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">Year Round</div>
+                            <div class="stat-label">Fresh Vegetables</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vegetables Section -->
+    <section class="vegetables" id="vegetables">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">This Week's Harvest</h2>
+                <p class="section-subtitle">Fresh vegetables available for pre-order. Pick up at the farmers market or at the farm.</p>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pickup Info Section -->
+    <section class="pickup-info">
+        <div class="container">
+            <h2 class="section-title">Pickup & Delivery Options</h2>
+            <div class="pickup-grid">
+                <div class="pickup-card">
+                    <div class="pickup-icon">🛒</div>
+                    <h3>Troy Farmers Market</h3>
+                    <p><strong>Saturdays 9am-1pm</strong></p>
+                    <p class="pickup-location">Troy, NY</p>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light); margin-top: 0.5rem;">Visit our booth for fresh vegetables</p>
+                </div>
+                <div class="pickup-card">
+                    <div class="pickup-icon">📍</div>
+                    <h3>Local Delivery</h3>
+                    <p>Available to Troy area</p>
+                    <p class="pickup-location">Contact us for details</p>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light); margin-top: 0.5rem;">Convenient delivery to your door</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p>Have questions? Want to visit the farm? We'd love to hear from you.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Instagram:</strong> <a href="https://instagram.com/sproutingheartfarm" target="_blank" rel="noopener noreferrer">@sproutingheartfarm</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Location:</strong> Brunswick, NY
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Sprouting Heart Farm</div>
+                <p>&copy; 2024 Sprouting Heart Farm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-btn" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be inserted here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h2>Complete Your Order</h2>
+                <button class="close-btn" id="closeCheckout">&times;</button>
+            </div>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Pickup/Delivery Method</label>
+                    <select required>
+                        <option value="">Select method</option>
+                        <option value="Farm Pickup">Troy Farmers Market (Saturdays 9am-1pm)</option>
+                        <option value="Local Delivery">Local Delivery (Troy area)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Additional Notes</label>
+                    <textarea rows="3"></textarea>
+                </div>
+                <div class="checkout-total">
+                    <span>Order Total:</span>
+                    <span id="checkoutTotal">$0.00</span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Complete Pre-Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
