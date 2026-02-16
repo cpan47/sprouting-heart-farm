@@ -76,11 +76,14 @@ body {
 }
 
 .logo {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -289,6 +292,16 @@ body {
 
 .hero-image {
     animation: fadeIn 1s ease-out 0.8s backwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+    animation: float 6s ease-in-out infinite;
 }
 
 .image-placeholder {
@@ -366,6 +379,17 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(74, 124, 43, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
+}
+
+.image-frame img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .about-image .image-placeholder {
@@ -689,6 +713,35 @@ body {
     color: white;
     padding: 3rem 2rem;
     text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-badge {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo-image {
+    max-width: 300px;
+}
+
+.footer-logo-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
 }
 
 .footer-logo {
