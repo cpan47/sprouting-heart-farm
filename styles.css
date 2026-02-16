@@ -591,6 +591,12 @@ body {
     color: var(--color-text);
 }
 
+/* Farmers Market Gallery Section */
+.market-gallery {
+    padding: 6rem 2rem;
+    background: var(--color-bg);
+}
+
 /* Farm Gallery Section */
 .farm-gallery {
     padding: 6rem 2rem;
