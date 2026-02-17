@@ -7,8 +7,9 @@ exports.handler = async function(event, context) {
     };
   }
 
-  const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN_SPROUT;
-  const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID_SPROUT;
+  // Support both local (.env) and production (Netlify) environment variable names
+  const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN_SPROUT || process.env.AIRTABLE_TOKEN;
+  const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID_SPROUT || process.env.AIRTABLE_BASE_ID;
   const AIRTABLE_ORDERS_TABLE = process.env.AIRTABLE_ORDERS_TABLE || 'Orders';
 
   try {
