@@ -38,22 +38,53 @@ async function fetchProductsFromAirtable() {
     }
 }
 
+// Active filter type
+let activeFilter = 'All';
+
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
     // Try to fetch products from Airtable first
     await fetchProductsFromAirtable();
 
-    // Render products (either from Airtable or fallback)
+    // Render filter buttons and products
+    renderFilters();
     renderProducts();
     updateCartCount();
     setupEventListeners();
 });
 
+// Render Filter Buttons
+function renderFilters() {
+    const filtersContainer = document.getElementById('productFilters');
+    if (!filtersContainer) return;
+
+    const types = ['All', ...new Set(products.map(p => p.type).filter(t => t))];
+
+    filtersContainer.innerHTML = '';
+    types.forEach(type => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn' + (type === activeFilter ? ' active' : '');
+        btn.textContent = type;
+        btn.addEventListener('click', () => {
+            activeFilter = type;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('productsGrid').innerHTML = '';
+            renderProducts();
+        });
+        filtersContainer.appendChild(btn);
+    });
+}
+
 // Render Products
 function renderProducts() {
     const productsGrid = document.getElementById('productsGrid');
-    
-    products.forEach(product => {
+
+    const filtered = activeFilter === 'All'
+        ? products
+        : products.filter(p => p.type === activeFilter);
+
+    filtered.forEach(product => {
         // Skip products without required fields
         if (!product.name || !product.price || !product.unit) {
             console.warn('⚠️ Skipping product with missing required fields:', product);

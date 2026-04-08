@@ -41,6 +41,7 @@ exports.handler = async function(event, context) {
         image: record.fields['Image']?.[0]?.url || null,
         description: record.fields['Description'],
         season: record.fields['Season'] || 'All Season',
+        type: record.fields['Type'] || '',
         organic: true
       };
     });
