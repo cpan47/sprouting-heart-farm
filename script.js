@@ -40,6 +40,7 @@ async function fetchProductsFromAirtable() {
 
 // Active filter type
 let activeFilter = 'All';
+let searchQuery = '';
 
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
@@ -51,6 +52,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderProducts();
     updateCartCount();
     setupEventListeners();
+
+    // Search input
+    document.getElementById('productSearch').addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase();
+        document.getElementById('productsGrid').innerHTML = '';
+        renderProducts();
+    });
 });
 
 // Render Filter Buttons
@@ -80,9 +88,11 @@ function renderFilters() {
 function renderProducts() {
     const productsGrid = document.getElementById('productsGrid');
 
-    const filtered = activeFilter === 'All'
-        ? products
-        : products.filter(p => p.type === activeFilter);
+    const filtered = products.filter(p => {
+        const matchesType = activeFilter === 'All' || p.type === activeFilter;
+        const matchesSearch = !searchQuery || p.name.toLowerCase().includes(searchQuery) || (p.description || '').toLowerCase().includes(searchQuery);
+        return matchesType && matchesSearch;
+    });
 
     filtered.forEach(product => {
         // Skip products without required fields
@@ -96,7 +106,7 @@ function renderProducts() {
 
         // Use image if available, otherwise use emoji
         const productImage = product.image
-            ? `<img src="${product.image}" alt="${product.name}" />`
+            ? `<img src="${product.image}" alt="${product.name}" loading="lazy" />`
             : product.emoji;
 
         productCard.innerHTML = `
