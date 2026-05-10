@@ -242,7 +242,7 @@ function renderCart() {
     // Add event listeners
     document.querySelectorAll('.quantity-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const productId = parseInt(e.target.dataset.id);
+            const productId = e.target.dataset.id;
             const change = parseInt(e.target.dataset.change);
             updateQuantity(productId, change);
         });
@@ -250,7 +250,7 @@ function renderCart() {
     
     document.querySelectorAll('.remove-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const productId = parseInt(e.target.dataset.id);
+            const productId = e.target.dataset.id;
             removeFromCart(productId);
         });
     });
