@@ -56,15 +56,8 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#vegetables" class="nav-link">Shop</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="cart-btn" id="cartBtn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 2L7.17 4H3v2h18V4h-4.17L15 2H9zm-4 6v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8H5z"/>
-                </svg>
-                <span class="cart-count" id="cartCount">0</span>
-            </button>
         </div>
     </nav>
 
@@ -78,8 +71,8 @@
                 </h1>
                 <p class="hero-subtitle">A fourth generation family farm in Brunswick, NY, practicing no-till organic methods and growing fresh vegetables year-round for our community</p>
                 <div class="hero-buttons">
-                    <a href="#vegetables" class="btn btn-primary">Pre-Order Now</a>
                     <a href="#about" class="btn btn-secondary">Our Story</a>
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -119,50 +112,6 @@
                             <div class="stat-label">Fresh Vegetables</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vegetables Section -->
-    <section class="vegetables" id="vegetables">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">This Week's Harvest</h2>
-                <p class="section-subtitle">Fresh vegetables available for pre-order. Pick up at the farmers market or at the farm.</p>
-            </div>
-            
-            <div class="product-controls">
-                <div class="product-filters" id="productFilters">
-                    <!-- Filter buttons will be dynamically inserted here -->
-                </div>
-                <input type="search" id="productSearch" class="product-search" placeholder="Search products...">
-            </div>
-
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be dynamically inserted here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Pickup Info Section -->
-    <section class="pickup-info">
-        <div class="container">
-            <h2 class="section-title">Pickup & Delivery Options</h2>
-            <div class="pickup-grid">
-                <div class="pickup-card">
-                    <div class="pickup-icon">🛒</div>
-                    <h3>Troy Farmers Market</h3>
-                    <p><strong>Saturdays 9am-1pm</strong></p>
-                    <p class="pickup-location">Troy, NY</p>
-                    <p style="font-size: 0.9rem; color: var(--color-text-light); margin-top: 0.5rem;">Visit our booth for fresh vegetables</p>
-                </div>
-                <div class="pickup-card">
-                    <div class="pickup-icon">📍</div>
-                    <h3>Local Delivery</h3>
-                    <p>Available to Troy area</p>
-                    <p class="pickup-location">Contact us for details</p>
-                    <p style="font-size: 0.9rem; color: var(--color-text-light); margin-top: 0.5rem;">Convenient delivery to your door</p>
                 </div>
             </div>
         </div>
@@ -305,67 +254,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h2>Your Cart</h2>
-                <button class="close-btn" id="closeCart">&times;</button>
-            </div>
-            <div class="cart-items" id="cartItems">
-                <!-- Cart items will be inserted here -->
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span id="cartTotal">$0.00</span>
-                </div>
-                <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Checkout Modal -->
-    <div class="checkout-modal" id="checkoutModal">
-        <div class="checkout-content">
-            <div class="checkout-header">
-                <h2>Complete Your Order</h2>
-                <button class="close-btn" id="closeCheckout">&times;</button>
-            </div>
-            <form id="checkoutForm" autocomplete="on">
-                <div class="form-group">
-                    <label for="checkout-name">Full Name</label>
-                    <input type="text" id="checkout-name" name="name" autocomplete="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="checkout-email">Email</label>
-                    <input type="email" id="checkout-email" name="email" autocomplete="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="checkout-phone">Phone</label>
-                    <input type="tel" id="checkout-phone" name="tel" autocomplete="tel" required>
-                </div>
-                <div class="form-group">
-                    <label for="checkout-method">Pickup/Delivery Method</label>
-                    <select id="checkout-method" name="method" required>
-                        <option value="">Select method</option>
-                        <option value="Farm Pickup">Troy Farmers Market (Saturdays 9am-1pm)</option>
-                        <option value="Local Delivery">Local Delivery (Troy area)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="checkout-notes">Additional Notes</label>
-                    <textarea id="checkout-notes" name="notes" rows="3" autocomplete="off"></textarea>
-                </div>
-                <div class="checkout-total">
-                    <span>Order Total:</span>
-                    <span id="checkoutTotal">$0.00</span>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Complete Pre-Order</button>
-            </form>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
